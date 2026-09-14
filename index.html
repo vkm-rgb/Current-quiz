@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Current Affairs Quiz</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- START SCREEN -->
+
+    <div id="startScreen" class="card">
+
+        <h1>Current Affairs Quiz</h1>
+
+        <p class="subtitle">
+            सितंबर 2026 Current Affairs
+        </p>
+
+        <input
+            type="text"
+            id="userName"
+            placeholder="अपना नाम लिखें">
+
+        <button onclick="startQuiz()">
+            टेस्ट शुरू करें
+        </button>
+
+        <div class="instructions">
+
+            <h3>निर्देश</h3>
+
+            <p>कुल प्रश्न: 20</p>
+            <p>समय: 15 मिनट</p>
+            <p>सही उत्तर: +2 अंक</p>
+            <p>गलत उत्तर: -0.66 अंक</p>
+            <p>छोड़े गए प्रश्न: 0 अंक</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUIZ SCREEN -->
+
+    <div id="quizScreen" class="hidden">
+
+        <div class="topbar">
+
+            <div>
+                <b id="questionNumber">
+                    प्रश्न 1 / 20
+                </b>
+            </div>
+
+            <div id="timer">
+                15:00
+            </div>
+
+        </div>
+
+
+        <div class="palette card">
+
+            <h3>Question Palette</h3>
+
+            <div id="palette"></div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div id="question">
+            </div>
+
+            <div id="options">
+            </div>
+
+            <div class="buttons">
+
+                <button
+                    class="secondary"
+                    onclick="previousQuestion()">
+                    Previous
+                </button>
+
+                <button
+                    class="review"
+                    onclick="markReview()">
+                    ☆ Review
+                </button>
+
+                <button
+                    class="secondary"
+                    onclick="clearAnswer()">
+                    Clear
+                </button>
+
+                <button onclick="nextQuestion()">
+                    Save & Next
+                </button>
+
+            </div>
+
+        </div>
+
+        <button
+            class="submit"
+            onclick="submitQuiz()">
+
+            Submit Test
+
+        </button>
+
+    </div>
+
+
+    <!-- RESULT SCREEN -->
+
+    <div id="resultScreen"
+         class="card hidden">
+
+        <h1>Test Result</h1>
+
+        <h2 id="resultName"></h2>
+
+        <div class="resultGrid">
+
+            <div>
+                <b id="score">0</b>
+                <span>Score</span>
+            </div>
+
+            <div>
+                <b id="attempted">0</b>
+                <span>Attempted</span>
+            </div>
+
+            <div>
+                <b id="correct">0</b>
+                <span>Correct</span>
+            </div>
+
+            <div>
+                <b id="wrong">0</b>
+                <span>Wrong</span>
+            </div>
+
+        </div>
+
+        <h3 id="accuracy"></h3>
+
+        <div id="reviewResult"></div>
+
+        <button onclick="location.reload()">
+            Retake Test
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
